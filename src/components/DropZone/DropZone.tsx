@@ -57,7 +57,7 @@ export function DropZone({
   return (
     <div
       {...getRootProps()}
-      className={`border-2 border-dashed border-gray-300 rounded-md p-4 max-w-2xl min-h-[200px] mx-auto cursor-pointer flex items-center justify-between flex-col gap-4 relative ${isGenerating ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
+      className={`w-full border-2 border-dashed border-gray-300 rounded-md p-4 min-h-[200px] mx-auto cursor-pointer flex items-center justify-between flex-col gap-4 relative ${isGenerating ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
     >
       <label htmlFor="dropzone-input" className="sr-only">
         ファイルを選択
