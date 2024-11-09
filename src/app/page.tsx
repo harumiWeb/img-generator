@@ -9,17 +9,27 @@ import { GeneratedAltJson } from "./index.d";
 export default function Home() {
   const [files, setFiles] = useState<ImgInfo[]>([]);
   const [generatedAltJson, setGeneratedAltJson] = useState<GeneratedAltJson | null>(null);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(generatedAltJson);
   }, [generatedAltJson]);
-  
+
   return (
     <main>
       <h1>img generator</h1>
       <Settings />
-      <DropZone files={files} setFiles={setFiles} />
-      <GenerateButton files={files} setGeneratedAltJson={setGeneratedAltJson} />
+      <DropZone
+        files={files}
+        setFiles={setFiles}
+        isGenerating={isGenerating}
+      />
+      <GenerateButton
+        files={files}
+        setGeneratedAltJson={setGeneratedAltJson}
+        isGenerating={isGenerating}
+        setIsGenerating={setIsGenerating}
+      />
     </main>
   );
 }

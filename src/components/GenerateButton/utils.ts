@@ -1,6 +1,13 @@
 import { generateImgAltProps } from "./index.d";
 import { GeneratedAltJson } from "@/app/index.d";
-export const generateImgAlt: generateImgAltProps = async (files, setGeneratedAltJson) => {
+
+export const generateImgAlt: generateImgAltProps = async (
+  files,
+  setGeneratedAltJson,
+  setError,
+  setIsGenerating
+) => {
+  setIsGenerating(true);
   const base64Files: string[] = await Promise.all(
     files.map(async (imgInfo) => {
       const file = imgInfo.file;
@@ -26,10 +33,10 @@ export const generateImgAlt: generateImgAltProps = async (files, setGeneratedAlt
 
   if (!json.ok) {
     const errorText = await json.text();
-    console.error("APIエラー:", errorText);
-    throw new Error(`APIリクエストに失敗しました: ${errorText}`);
+    setError(`APIリクエストに失敗しました: ${errorText}`);
   }
 
   const jsonData: GeneratedAltJson = await json.json();
   setGeneratedAltJson(jsonData);
+  setIsGenerating(false);
 };

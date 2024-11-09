@@ -8,6 +8,7 @@ test("DropZone renders correctly", () => {
   const props: DropZoneProps = {
     files: [],
     setFiles: () => {},
+    isGenerating: false,
   };
   render(<DropZone {...props} />);
   expect(
