@@ -2,12 +2,10 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { PreviewImgs } from "@/components/PreviewImgs/PreviewImgs";
-import { ImgInfo } from "@/components";
-import { DeleteFile, OnDrop } from "./index.d";
+import { DeleteFile, OnDrop, DropZoneProps } from "./index.d";
 import { checkDuplicateFiles } from "./utils";
 
-export function DropZone() {
-  const [files, setFiles] = useState<ImgInfo[]>([]);
+export function DropZone({ files, setFiles }: DropZoneProps) {
   const [isFileOver, setIsFileOver] = useState(false);
 
   const deleteFile: DeleteFile = useCallback((index: number) => {
