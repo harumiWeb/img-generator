@@ -74,8 +74,9 @@ export function DropZone({
               クリックしてファイルを選択してください
               <br />
               <span className="text-sm text-gray-500 leading-[2] block pt-4">
-                ※ 画像は一度に5枚まで対応しています<br />
-                ※ 画像のサイズは5MBまで対応しています
+                ※ 対応ファイル形式：jpg, png, webp<br />
+                ※ 対応ファイルサイズ：5MBまで<br />
+                ※ 画像選択は一度に5枚まで対応しています
               </span>
             </p>
           )}

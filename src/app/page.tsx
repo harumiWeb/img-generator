@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import { ImgInfo } from "@/components";
 import { GenerateButton } from "@/components/GenerateButton/GenerateButton";
 import { Settings } from "@/components/SettingsComponent/Settings";
-import { GeneratedAltJson, SettingsType } from "./index.d";
+import { altTexts, SettingsType } from "./index.d";
+import { GeneratedImgTagList } from "@/components/GeneratedImgTagList/GeneratedImgTagList";
 
 export default function Home() {
   const [files, setFiles] = useState<ImgInfo[]>([]);
   const [generatedAltJson, setGeneratedAltJson] =
-    useState<GeneratedAltJson | null>(null);
+    useState<altTexts | null>(null);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [settings, setSettings] = useState<SettingsType>({
     src: "",
@@ -17,10 +18,6 @@ export default function Home() {
     fetchPriority: "auto",
     decoding: "auto",
   });
-
-  useEffect(() => {
-    console.log(generatedAltJson);
-  }, [generatedAltJson]);
 
   return (
     <main>
@@ -37,6 +34,11 @@ export default function Home() {
           setGeneratedAltJson={setGeneratedAltJson}
           isGenerating={isGenerating}
           setIsGenerating={setIsGenerating}
+        />
+        <GeneratedImgTagList
+          altTexts={generatedAltJson?.altTexts || { altTexts: {} }}
+          settings={settings}
+          files={files}
         />
       </div>
     </main>
