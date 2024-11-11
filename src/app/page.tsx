@@ -18,6 +18,13 @@ export default function Home() {
     fetchPriority: "auto",
     decoding: "auto",
   });
+  const [copyFiles, setCopyFiles] = useState<ImgInfo[]>(structuredClone(files));
+  const [copySettings, setCopySettings] = useState<SettingsType>(structuredClone(settings));
+
+  useEffect(() => {
+    setCopyFiles(structuredClone(files));
+    setCopySettings(structuredClone(settings));
+  }, [generatedAltJson]);
 
   return (
     <main>
@@ -37,8 +44,8 @@ export default function Home() {
         />
         <GeneratedImgTagList
           altTexts={generatedAltJson?.altTexts || { altTexts: {} }}
-          settings={settings}
-          files={files}
+          settings={copySettings}
+          files={copyFiles}
         />
       </div>
     </main>

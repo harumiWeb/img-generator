@@ -34,7 +34,7 @@ export function GeneratedImgTag({ alt, settings, file }: GeneratedImgTagProps) {
                 <div key={key} className="flex items-center gap-2">
                   <RadioGroupItem
                     value={value}
-                    id={`alt-${index + 1}`}
+                    id={value}
                     className={`w-6 h-6 border-2 border-blue-600 rounded-full relative flex-shrink-0 ${
                       selectedAltText === value
                         ? "[&::before]:content-[''] [&::before]:absolute [&::before]:w-3 [&::before]:h-3 [&::before]:bg-blue-600 [&::before]:rounded-full [&::before]:top-1/2 [&::before]:left-1/2 [&::before]:-translate-x-1/2 [&::before]:-translate-y-1/2"
@@ -42,7 +42,7 @@ export function GeneratedImgTag({ alt, settings, file }: GeneratedImgTagProps) {
                     }`}
                   />
                   <Label
-                    htmlFor={`alt-${index + 1}`}
+                    htmlFor={value}
                     className="leading-5 tracking-wider"
                   >
                     {String(value)}
@@ -53,7 +53,7 @@ export function GeneratedImgTag({ alt, settings, file }: GeneratedImgTagProps) {
           </RadioGroup>
         </div>
       </div>
-      <CodeBlock settings={settings} selectedAltText={selectedAltText} />
+      <CodeBlock settings={settings} selectedAltText={selectedAltText} file={file} />
     </div>
   );
 }
