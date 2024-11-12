@@ -3,6 +3,7 @@ import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import atomDark from "react-syntax-highlighter/dist/esm/styles/prism/atom-dark";
 import { useState } from "react";
 import { LanguageButton } from "./LanguageButton/LanguageButton";
+import { CopyButton } from "./CopyButton/CopyButton";
 
 export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
   const [language, setLanguage] = useState<"html" | "next/image">("html");
@@ -33,6 +34,7 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
           setLanguage={setLanguage}
         />
       </div>
+      {/* html */}
       <div
         hidden={language !== "html"}
         role="tabpanel"
@@ -41,6 +43,12 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
         id="htmlTab"
         className="z-10 relative"
       >
+        <CopyButton
+          settings={settings}
+          file={file}
+          selectedAltText={selectedAltText}
+          tagName="img"
+        />
         <SyntaxHighlighter
           language="html"
           style={atomDark}
@@ -66,6 +74,7 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
           } alt="${selectedAltText}"/>`}
         </SyntaxHighlighter>
       </div>
+      {/* next/image */}
       <div
         hidden={language !== "next/image"}
         role="tabpanel"
@@ -74,6 +83,12 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
         id="next/imageTab"
         className="z-10 relative"
       >
+        <CopyButton
+          settings={settings}
+          file={file}
+          selectedAltText={selectedAltText}
+          tagName="Image"
+        />
         <SyntaxHighlighter
           language="jsx"
           style={atomDark}
