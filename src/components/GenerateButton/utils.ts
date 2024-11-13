@@ -39,4 +39,10 @@ export const generateImgAlt: generateImgAltProps = async (
   const jsonData: GeneratedAltJson = await json.json();
   setGeneratedAltJson(jsonData);
   setIsGenerating(false);
+  
+  setTimeout(() => {
+    document.getElementById("generated-img-tag-list")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 100);
 };

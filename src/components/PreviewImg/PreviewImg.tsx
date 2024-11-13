@@ -12,7 +12,7 @@ export function PreviewImg({ file, deleteFile, index }: PreviewImgProps) {
 
   return (
     <li className="p-2 border-2 border-gray-300 rounded-md flex flex-col gap-2">
-      <p className="text-sm">{file.file.name}</p>
+      <p className="text-sm break-all">{file.file.name}</p>
       <img
         src={URL.createObjectURL(file.file)}
         alt={file.file.name}

@@ -64,3 +64,6 @@
     @apply bg-background text-foreground;
   }
 }
+.code-block {
+  padding-right: 46px !important;
+}

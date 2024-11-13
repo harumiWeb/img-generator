@@ -11,7 +11,7 @@ export function GeneratedImgTagList({
   if (!altTexts || isEmpty) return null;
 
   return (
-    <ul className="flex flex-col gap-4 w-full">
+    <ul id="generated-img-tag-list" className="flex flex-col gap-4 w-full">
       {Object.entries(altTexts).map(([key, value], index) => {
         if (!files[index]) return null;
         return (
