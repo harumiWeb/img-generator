@@ -14,7 +14,7 @@ export function GenerateButton({
   return (
     <>
       <button
-        className={`bg-blue-500 flex items-center justify-center gap-3 text-white text-lg font-bold py-2 px-8 rounded-md mx-auto hover:bg-blue-600 transition-colors duration-200 ${
+        className={`generate-button bg-blue-500 flex items-center justify-center gap-3 text-white text-lg font-bold py-2 px-8 rounded-md mx-auto hover:bg-blue-600 transition-colors duration-200 ${
           isGenerating ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={() => {

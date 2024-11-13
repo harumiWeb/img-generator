@@ -26,6 +26,19 @@ export default function Home() {
     setCopySettings(structuredClone(settings));
   }, [generatedAltJson]);
 
+  useEffect(() => {
+    // ローカルストレージから設定を読み込む
+    const savedSettings = localStorage.getItem("settings");
+    if (savedSettings) {
+      setSettings(JSON.parse(savedSettings));
+    }
+  }, []);
+
+  useEffect(() => {
+    // settingsが変更されたときにローカルストレージに保存する
+    localStorage.setItem("settings", JSON.stringify(settings));
+  }, [settings]);
+
   return (
     <main>
       <h1>img generator</h1>

@@ -6,7 +6,7 @@ import { ToolTip } from "@/components/ToolTip/ToolTip";
 export function SrcOption({ settings, setSettings }: SettingsProps) {
   return (
     <div className="flex flex-col gap-1">
-      <Label htmlFor="src" className="text-md font-bold text-blue-600 flex items-center gap-2">
+      <Label htmlFor="src" className="text-md font-bold text-blue-600 tracking-wider flex items-center gap-2">
         src属性
         <ToolTip text="src属性は画像ファイルまでのパスを指定します。" />
       </Label>
