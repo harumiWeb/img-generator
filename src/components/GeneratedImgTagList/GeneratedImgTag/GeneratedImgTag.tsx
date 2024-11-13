@@ -9,9 +9,9 @@ export function GeneratedImgTag({ alt, settings, file }: GeneratedImgTagProps) {
   if (!alt) return null;
   if (!selectedAltText) return null;
   return (
-    <div>
+    <div className="bg-blue-100/40 p-4 rounded-md">
       <div className="flex gap-4">
-        <div className="grid place-items-center border-2 border-gray-200 p-2 rounded-md">
+        <div className="grid place-items-center border-2 border-gray-200 p-2 rounded-md bg-white">
           <img
             src={URL.createObjectURL(file.file)}
             alt={file.file.name}

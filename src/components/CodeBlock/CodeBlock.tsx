@@ -63,7 +63,11 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
         >
           {`<img src="${settings.src}/${file.file.name}" width="${
             file.width
-          }" height="${file.height}" loading="${settings.loading}"${
+          }" height="${file.height}"${
+            settings.loading !== "auto"
+              ? ` loading="${settings.loading}"`
+              : ""
+          }${
             settings.fetchPriority !== "auto"
               ? ` fetchpriority="${settings.fetchPriority}"`
               : ""
@@ -103,7 +107,11 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
         >
           {`<Image src="${settings.src}/${file.file.name}" width="${
             file.width
-          }" height="${file.height}" loading="${settings.loading}"${
+          }" height="${file.height}"${
+            settings.loading !== "auto"
+              ? ` loading="${settings.loading}"`
+              : ""
+          }${
             settings.fetchPriority !== "auto"
               ? ` fetchpriority="${settings.fetchPriority}"`
               : ""

@@ -12,7 +12,11 @@ export function CopyButton({
   const [copied, setCopied] = useState(false);
   
   const handleCopy = async () => {
-    const text = `<${tagName} src="${settings.src}/${file.file.name}" width="${file.width}" height="${file.height}" loading="${settings.loading}"${
+    const text = `<${tagName} src="${settings.src}/${file.file.name}" width="${file.width}" height="${file.height}"${
+      settings.loading !== "auto"
+        ? ` loading="${settings.loading}"`
+        : ""
+    }${
       settings.fetchPriority !== "auto"
         ? ` fetchpriority="${settings.fetchPriority}"`
         : ""

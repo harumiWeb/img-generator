@@ -14,7 +14,7 @@ export default function Home() {
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [settings, setSettings] = useState<SettingsType>({
     src: "",
-    loading: "lazy",
+    loading: "auto",
     fetchPriority: "auto",
     decoding: "auto",
   });
