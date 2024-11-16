@@ -9,7 +9,7 @@ export default function FV() {
           height={174}
           className="mx-auto"
         />
-        <div className="absolute bottom-2 right-4 flex items-end w-[120px] h-auto gap-2">
+        <div className="absolute bottom-2 right-[105px] flex items-end w-[120px] h-auto gap-2">
           <span className="text-gray-700 text-sm shrink-0 leading-none">
             Powered by
           </span>
