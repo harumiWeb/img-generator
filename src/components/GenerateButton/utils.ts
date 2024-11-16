@@ -33,7 +33,15 @@ export const generateImgAlt: generateImgAltProps = async (
 
   if (!response.ok) {
     const errorText = await response.text();
-    console.error(response);
+    console.error(`APIリクエストに失敗しました: ${errorText}`);
+
+    try {
+      const errorJson = await response.json();
+      console.error(`エラー詳細: ${JSON.stringify(errorJson)}`);
+    } catch (e) {
+      console.error("JSONパースに失敗しました:", e);
+    }
+
     setError(`APIリクエストに失敗しました: ${errorText}`);
     return;
   }
