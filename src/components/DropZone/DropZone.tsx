@@ -21,7 +21,7 @@ export function DropZone({
     (acceptedFiles: File[]) => {
       setIsFileOver(false);
 
-      if (files.length + acceptedFiles.length > 5) {
+      if (files.length + acceptedFiles.length > 3) {
         setIsFileOver(true);
         return;
       }
@@ -57,7 +57,7 @@ export function DropZone({
   return (
     <div
       {...getRootProps()}
-      className={`w-full border-2 border-dashed border-gray-300 rounded-md p-4 min-h-[200px] mx-auto cursor-pointer flex items-center justify-between flex-col gap-4 relative ${isGenerating ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
+      className={`w-full border-2 border-dashed border-gray-300 rounded-md p-4 min-h-[200px] mx-auto cursor-pointer flex items-center justify-between flex-col gap-4 relative hover:bg-gray-200 transition-colors duration-300 ${isGenerating ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
     >
       <label htmlFor="dropzone-input" className="sr-only">
         ファイルを選択
@@ -76,7 +76,7 @@ export function DropZone({
               <span className="text-sm text-gray-500 leading-[2] block pt-4">
                 ※ 対応ファイル形式：jpg, png, webp<br />
                 ※ 対応ファイルサイズ：5MBまで<br />
-                ※ 画像選択は一度に5枚まで対応しています
+                ※ 画像選択は一度に3枚まで対応しています
               </span>
             </p>
           )}
@@ -90,10 +90,10 @@ export function DropZone({
         <p>
           {isFileOver ? (
             <span className="text-red-500">
-              ※ 画像は一度に5枚までしか対応していません
+              ※ 画像は一度に3枚までしか対応していません
             </span>
           ) : (
-            <>残り {5 - files.length} 枚</>
+            <>残り {3 - files.length} 枚</>
           )}
         </p>
       </div>
