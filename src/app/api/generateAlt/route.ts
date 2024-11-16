@@ -1,6 +1,8 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { z } from 'zod';
+
+export const runtime = 'edge';
 
 interface inlineData {
   base64: string;
@@ -20,7 +22,7 @@ interface fileToGenerativePartProps {
 const base64Schema = z.string().regex(/^data:(.+);base64,(.+)$/, '無効なbase64形式');
 const filesSchema = z.array(base64Schema);
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const { files } = await req.json() as { files: string[] };
 
   // 入力の検証

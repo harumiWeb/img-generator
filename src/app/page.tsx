@@ -9,6 +9,8 @@ import { GeneratedImgTagList } from "@/components/GeneratedImgTagList/GeneratedI
 import SNSShare from "@/components/SnsShare/SnsShare";
 import FV from "@/components/FV/FV";
 
+export const runtime = 'edge';
+
 export default function Home() {
   const [files, setFiles] = useState<ImgInfo[]>([]);
   const [generatedAltJson, setGeneratedAltJson] = useState<altTexts | null>(
