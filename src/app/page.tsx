@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col mx-auto justify-center items-center gap-4 max-w-2xl">
+      <div className="flex flex-col mx-auto justify-center items-center gap-4 max-w-2xl min-h-screen">
         <FV />
         <Settings settings={settings} setSettings={setSettings} />
         <DropZone
