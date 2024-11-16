@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
   あなたは画像のalt属性を生成してJSONを返すAPIです。
   画像の説明を日本語で生成してください。
   画像ごとに3つずつaltテキスト候補を生成してください。
-  JSONの形式は以下の通りです。"必ずJSON形式で返してください。"
+  JSONの形式は以下の通りです。"必ず以下のJSON形式で返してください。"
   {
     "altTexts": {
       ${files.map(
@@ -96,9 +96,22 @@ export async function POST(req: NextRequest) {
 
   try {
     const generatedContent = await model.generateContent([prompt, ...inlineData.map(fileToGenerativePart)]);
+    
+    // generatedContentの内容を確認
+    if (!generatedContent || !generatedContent.response) {
+      throw new Error("生成されたコンテンツが無効です");
+    }
+
     const json = JSON.parse(generatedContent.response.text());
     return NextResponse.json(json);
   } catch (error) {
-    return NextResponse.json({ error: 'APIリクエストに失敗しました' }, { status: 500 });
+    // errorがError型であることを確認
+    if (error instanceof Error) {
+      console.error("エラー詳細:", error.message); // エラーメッセージを出力
+      return NextResponse.json({ error: 'APIリクエストに失敗しました', details: error.message }, { status: 500 });
+    } else {
+      console.error("不明なエラー:", error); // 不明なエラーを出力
+      return NextResponse.json({ error: 'APIリクエストに失敗しました', details: '不明なエラーが発生しました' }, { status: 500 });
+    }
   }
 }
