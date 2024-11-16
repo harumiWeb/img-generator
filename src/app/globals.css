@@ -105,3 +105,8 @@ body {
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
+
+.border-gradient {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ffa63d, #ff3d77, #338aff, #3cf0c5) 1;
+}
