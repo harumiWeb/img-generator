@@ -11,7 +11,7 @@ const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob:;
+    img-src 'self' blob: data:;
     object-src 'none';
     frame-ancestors 'none';
     block-all-mixed-content;
