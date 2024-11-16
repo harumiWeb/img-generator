@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
           mimeType: mimeType,
         });
       } else {
-        console.error(`ファイルサイズが大きすぎます: ${fileSize} bytes`);
+        return NextResponse.json({ error: `ファイルサイズが大きすぎます: ${fileSize} bytes` }, { status: 400 });
       }
     }
   }
