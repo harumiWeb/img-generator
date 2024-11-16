@@ -105,6 +105,12 @@ export async function POST(req: NextRequest) {
     const json = JSON.parse(generatedContent.response.text());
     return NextResponse.json(json);
   } catch (error) {
+    // 503エラーの特定
+    if (error instanceof Error && error.message.includes("503")) {
+      console.error("503エラーが発生しました:", error.message);
+      return NextResponse.json({ error: 'サービスが一時的に利用できません。後ほど再試行してください。' }, { status: 503 });
+    }
+
     // errorがError型であることを確認
     if (error instanceof Error) {
       console.error("エラー詳細:", error.message); // エラーメッセージを出力
