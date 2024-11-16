@@ -23,7 +23,7 @@ export const generateImgAlt: generateImgAltProps = async (
     })
   );
 
-  const json = await fetch("/api/generateAlt", {
+  const response = await fetch("/api/generateAlt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,12 +31,14 @@ export const generateImgAlt: generateImgAltProps = async (
     body: JSON.stringify({ files: base64Files }),
   });
 
-  if (!json.ok) {
-    const errorText = await json.text();
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error(response);
     setError(`APIリクエストに失敗しました: ${errorText}`);
+    return;
   }
 
-  const jsonData: GeneratedAltJson = await json.json();
+  const jsonData: GeneratedAltJson = await response.json();
   setGeneratedAltJson(jsonData);
   setIsGenerating(false);
   
