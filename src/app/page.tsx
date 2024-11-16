@@ -46,7 +46,6 @@ export default function Home() {
 
   return (
     <>
-      <header>header</header>
       <div className="flex flex-col mx-auto justify-center items-center gap-4 max-w-2xl">
         <FV />
         <Settings settings={settings} setSettings={setSettings} />

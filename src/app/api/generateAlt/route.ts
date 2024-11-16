@@ -77,7 +77,7 @@ export async function POST(req: Request) {
   あなたは画像のalt属性を生成してJSONを返すAPIです。
   画像の説明を日本語で生成してください。
   画像ごとに3つずつaltテキスト候補を生成してください。
-  JSONの形式は以下の通りです。
+  JSONの形式は以下の通りです。"必ずJSON形式で返してください。"
   {
     "altTexts": {
       ${files.map(
