@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | IMAGEX",
     default: "IMAGEX | 画像を選んでimgタグに必要なコードを一瞬で生成",
   },
-  description: "IMAGEX",
+  description: "IMAGEXは画像を選んでimgタグに必要なコードを一瞬で生成できるサービスです。altテキストを考えたりする時間は不要です。コーディングスピードを更に上げましょう！",
   alternates: {
     canonical: "./",
   },

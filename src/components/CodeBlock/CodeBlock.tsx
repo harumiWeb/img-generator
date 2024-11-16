@@ -106,9 +106,9 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
             },
           }}
         >
-          {`<Image src="${settings.src}/${file.file.name}" width="${
+          {`<Image src="${settings.src}/${file.file.name}" width={${
             file.width
-          }" height="${file.height}"${
+          }} height={${file.height}}${
             settings.loading !== "auto"
               ? ` loading="${settings.loading}"`
               : ""
