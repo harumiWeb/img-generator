@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={notoSansJP.className}>{children}</body>
+      <body className={notoSansJP.className}>
+        <main>{children}</main>
+        <footer className="text-center text-md py-4 text-gray-200 bg-gray-700">
+          <small>{`© ${new Date().getFullYear()} ImageX`}</small>
+        </footer>
+      </body>
     </html>
   );
 }

@@ -89,3 +89,19 @@ body {
     background-position: 0% 50%;
   }
 }
+
+.gradient-text {
+  background: linear-gradient(to right, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: AnimationTitle 5s ease infinite;
+  color: transparent;
+}
+
+@keyframes AnimationTitle {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
