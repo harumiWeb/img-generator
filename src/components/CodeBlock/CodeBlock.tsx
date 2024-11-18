@@ -105,6 +105,7 @@ export function CodeBlock({ settings, selectedAltText, file }: CodeBlockProps) {
               fontFamily: "monospace",
             },
           }}
+          className="code-block"
         >
           {`<Image src="${settings.src}/${file.file.name}" width={${
             file.width
