@@ -1,5 +1,5 @@
 
-# Project Name
+# img-generator
 
 This project is an image generation application built with [Next.js](https://nextjs.org/). Users can upload images and generate the necessary img tags with AI-generated alt text.
 
