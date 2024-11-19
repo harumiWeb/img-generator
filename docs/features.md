@@ -10,7 +10,6 @@
   - loading属性を設定する
   - decoding属性を設定する
   - fetchpriority属性を設定する
-  - referrerpolicy属性を設定する
 - AIによるaltテキスト候補を設定する
   - ラジオボタンで選択する
 - imgタグをコピーする
@@ -31,7 +30,6 @@
 - loading属性はラジオボタンで選択する
 - decoding属性はラジオボタンで選択する
 - fetchpriority属性はラジオボタンで選択する
-- referrerpolicy属性はラジオボタンで選択する
 
 ## AIによるaltテキスト候補の生成
 

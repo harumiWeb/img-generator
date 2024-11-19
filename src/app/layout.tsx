@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "IMAGEX",
-    description: "IMAGEX",
+    description: "IMAGEXは画像を選んでimgタグに必要なコードを一瞬で生成できるサービスです。altテキストを考えたりする時間は不要です。コーディングスピードを更に上げましょう！",
     siteName: "IMAGEX",
     locale: "ja_JP",
     type: "website",

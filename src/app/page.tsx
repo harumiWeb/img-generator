@@ -68,7 +68,7 @@ export default function Home() {
           files={copyFiles}
         />
       </div>
-      <SNSShare url={`${process.env.NEXT_PUBLIC_BASE_URL}`} title="ImageX" />
+      <SNSShare url={`${process.env.NEXT_PUBLIC_BASE_URL}`} title="IMAGEX" />
     </>
   );
 }
